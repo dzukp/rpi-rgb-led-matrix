@@ -22,6 +22,27 @@
 #define GPIO_BIT(b) ((uint64_t)1<<(b))
 
 struct HardwareMapping matrix_hardware_mappings[] = {
+  {
+    .name          = "eco",
+
+    .output_enable = GPIO_BIT(18),
+    .clock         = GPIO_BIT(17),
+    .strobe        = GPIO_BIT(4),
+
+    /* Address lines */
+    .a             = GPIO_BIT(14),
+    .b             = GPIO_BIT(23),
+    .c             = GPIO_BIT(24),
+    .d             = GPIO_BIT(25),
+    .e             = GPIO_BIT(15),
+
+    .p0_r1         = GPIO_BIT(12),
+    .p0_g1         = GPIO_BIT(5),
+    .p0_b1         = GPIO_BIT(6),
+    .p0_r2         = GPIO_BIT(19),
+    .p0_g2         = GPIO_BIT(13),
+    .p0_b2         = GPIO_BIT(20)
+  },
   /*
    * The regular hardware mapping described in the wiring.md and used
    * by the adapter PCBs.
